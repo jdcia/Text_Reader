@@ -11,6 +11,7 @@ This file will contain the class reader. This takes a filename as input and conv
 
 class reader():
 
+    #constructor
     def __init__(self, filename):
         
         #input file
@@ -20,16 +21,15 @@ class reader():
     def analyze(self):
         #return text of the pdf
 
+        #convert pdf into image for each page
         pgs = convert_from_path(self.input_file, 500)
-
-        #starting count
-        counter = 0
 
         result_text = ""
 
         #for all pages
         for x in pgs:
 
+            #append proccessed text to final text 
             result_text += pytesseract.image_to_string(x)
 
         return result_text

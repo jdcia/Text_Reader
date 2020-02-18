@@ -1,9 +1,14 @@
 from gtts import gTTS
 import os
 
+'''
+Contains Speaker class which converts text to speach. 
+'''
+
 
 class speaker():
 
+    #contructor
     def __init__(self, text):
         self.to_read = text
 

@@ -2,7 +2,9 @@
 import input_reader
 import text_speech
 
-
+'''
+Main function for Text_Reader. This controls the flow of the program before the frontend is built
+'''
 
 def main():
 
