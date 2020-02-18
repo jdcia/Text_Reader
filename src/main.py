@@ -7,7 +7,8 @@ import text_speech
 def main():
 
 
-    input = input_reader.reader("test.pdf")
+    input = input_reader.reader("/home/jacob/Projects/Text_Reader/src/test.pdf")
+    input.analyze()
 
 
 

@@ -2,12 +2,11 @@
 
 class speaker():
 
-    __init__(self, text):
+    def __init__(self, text):
         self.to_read = text
 
     def read():
         #turn the file into an mp3
-
 
         pass
 
