@@ -12,7 +12,7 @@ def main():
     #TODO add command line arguements
 
     #create reader object
-    reader = input_reader.reader("/home/jacob/Projects/Text_Reader/src/test.pdf")
+    reader = input_reader.reader("./test.pdf")
 
     text_pdf = reader.analyze()
 
@@ -20,7 +20,7 @@ def main():
     speaker = text_speech.speaker(text_pdf)
 
     #play the output
-    speaker.speak()
+    #speaker.speak()
 
     #summarize the text into a condences version
 
@@ -30,7 +30,7 @@ def main():
     #call to summarize the text.
     summed_text = condencer.summarize()
 
-    
+
     print(summed_text)
 
 

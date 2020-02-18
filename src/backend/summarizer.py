@@ -22,13 +22,30 @@ class condencer():
 
         summary = ""
 
-        word_freq = create_freqtable()
+        count = 0
 
+        modifier = 1.5
+
+        #create frequency table
+        word_freq = self.create_freqtable()
+
+        #tokenize text
         sentences = sent_tokenize(self.to_sum)
 
+        #score sentences
+        values =  self.score_sentences(sentences, word_freq)
+
+        #find threshold
+        thresh =  self.find_thresh(values)
+
+        #if sentence is above threshold * modifier add it
+        for s in sentences:
+            if s[:10] in values and values[s[:10]] > (modifier * thresh):
+                summary += " " + s
+                count += 1
 
 
-        return 
+        return summary
     def create_freqtable(self):
         
 
@@ -58,12 +75,38 @@ class condencer():
 
         return table
 
-    def score_sentences(self):
+    def score_sentences(self, sentences, word_freq):
 
         scores = dict()
+        #score each sentence
+        for s in sentences:
+            #number of words in sentence
+            wc_sentence = len(word_tokenize(s))
 
+            for v in word_freq:
+                if v in s.lower():
+                    if s[:10] in scores:
+                        scores[s[:10]] += word_freq[v]
+                    else:
+                        scores[s[:10]] = word_freq[v]
 
+            scores[s[:10]] = scores[s[:10]] // wc_sentence
 
         return scores
+
+    def find_thresh(self, values):
+
+        #take average score for all sentences
+
+        sum = 0
+        for i in values:
+            sum += values[i]
+
+        average = int(sum/len(values))
+
+
+        return average
+
+
 
     
