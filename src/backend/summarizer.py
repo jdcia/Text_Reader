@@ -1,4 +1,6 @@
-
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize, sent_tokenize
 
 '''
 This call will use nltk library reference for start
@@ -20,7 +22,48 @@ class condencer():
 
         summary = ""
 
+        word_freq = create_freqtable()
 
-        return summary
+        sentences = sent_tokenize(self.to_sum)
+
+
+
+        return 
+    def create_freqtable(self):
+        
+
+        #declare dictionary
+        table = dict()
+
+        #create stopwords from library
+        stop_words = set(stopwords.words("english"))
+
+        #tokenize words
+        words = word_tokenize(self.to_sum)
+
+        ps = PorterStemmer()
+
+
+        #for each word of the file
+        for w in words:
+            
+            w = ps.stem(w)
+
+            if w in stop_words:
+                continue
+            if w in table:
+                table[w] += 1
+            else:
+                table[w] = 1
+
+        return table
+
+    def score_sentences(self):
+
+        scores = dict()
+
+
+
+        return scores
 
     
