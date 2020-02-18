@@ -12,13 +12,10 @@ This file will contain the class reader. This takes a filename as input and conv
 class reader():
 
     def __init__(self, filename):
+        
         #input file
-
         self.input_file = filename
    
-
-
-        pass
 
     def analyze(self):
         #return text of the pdf

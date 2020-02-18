@@ -1,3 +1,5 @@
+from gtts import gTTS
+import os
 
 
 class speaker():
@@ -5,17 +7,18 @@ class speaker():
     def __init__(self, text):
         self.to_read = text
 
-    def read():
-        #turn the file into an mp3
+    def speak(self):
 
-        pass
+        #move this to command line option or gui.
+        language = 'en'
 
-    def output_mp3():
-        #write mp3 to file
-
-        pass
-
-    def speak():
+        #convert text using gTTS
+        voice = gTTS(text = self.to_read, lang = language, slow=False)
+        
         #play the mp3
 
-        pass
+        #create the mp3 file
+        voice.save("temp.mp3")
+
+        #eventually write mp3 player so that it is built in.
+        os.system("mpg321 temp.mp3")
