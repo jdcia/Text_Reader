@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "This will be the frontend for the text to speech and summarization app",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdcia/Text_Reader.git"
+  },
+  "author": "Jacob Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdcia/Text_Reader/issues"
+  },
+  "homepage": "https://github.com/jdcia/Text_Reader#readme"
+}
