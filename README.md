@@ -1,6 +1,4 @@
 # Text_Reader
-This project will run with an electron frontend for the user interface.
+This project was made quickly to help me with class work.
 
-I will be using python for the backend along with an sqlite database for information storage.
-
-The techniques used to get text or summarize may be converted to machine learning at some point.
+I may come back and make additions such as a frontend in electron and maybe an sqllite database to store data.
