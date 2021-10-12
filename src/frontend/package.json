@@ -4,7 +4,7 @@
   "description": "This will be the frontend for the text to speech and summarization app",
   "main": "main.js",
   "dependencies": {
-    "electron": "^8.0.1"
+    "electron": "^11.5.0"
   },
   "devDependencies": {},
   "scripts": {
